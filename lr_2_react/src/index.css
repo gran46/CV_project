@@ -11,29 +11,33 @@
   }
 }
 
-/* Обов'язково додай ці змінні на самий початок CSS файлу */
-
 :root {
   --bg-color: #ffffff;
-  --sidebar-bg: #f4f7f6;
-  --text-main: #2c3e50;
-  --text-secondary: #546e7a;
-  --accent-color: #2e7d32;
-  --line-color: #e0e0e0;
+  --sidebar-bg: #f0f4f2;
+  --text-main: #1a2a1b;
+  --text-secondary: #5a6b5d;
+  --accent-color: #1b5e20;
+  --line-color: #d1dbd3;
 }
 
-/* Коли на body з'являється клас dark-theme, змінні змінюють значення */
 body.dark-theme {
-  --bg-color: #1a1a1a;
-  --sidebar-bg: #121212;
-  --text-main: #e0e0e0;
-  --text-secondary: #b0bec5;
-  --line-color: #333333;
-  background-color: var(--bg-color); /* Щоб фон всього сайту теж мінявся */
+  --bg-color: #0b140c;
+  --sidebar-bg: #131d14;
+  --text-main: #e8f5e9;
+  --text-secondary: #a5d6a7;
+  --line-color: #2e3b2f;
+  --accent-color: #4caf50;
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: var(--sidebar-bg);
   color: var(--text-main);
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
