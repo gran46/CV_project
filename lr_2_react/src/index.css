@@ -1,0 +1,39 @@
+@import	"tailwindcss";
+
+@layer base {
+  :root {
+    --bg-color: #ffffff;
+    --sidebar-bg: #f4f7f6;
+    --text-main: #2c3e50;
+    --text-secondary: #546e7a;
+    --accent-color: #2e7d32;
+    --line-color: #e0e0e0;
+  }
+}
+
+/* Обов'язково додай ці змінні на самий початок CSS файлу */
+
+:root {
+  --bg-color: #ffffff;
+  --sidebar-bg: #f4f7f6;
+  --text-main: #2c3e50;
+  --text-secondary: #546e7a;
+  --accent-color: #2e7d32;
+  --line-color: #e0e0e0;
+}
+
+/* Коли на body з'являється клас dark-theme, змінні змінюють значення */
+body.dark-theme {
+  --bg-color: #1a1a1a;
+  --sidebar-bg: #121212;
+  --text-main: #e0e0e0;
+  --text-secondary: #b0bec5;
+  --line-color: #333333;
+  background-color: var(--bg-color); /* Щоб фон всього сайту теж мінявся */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

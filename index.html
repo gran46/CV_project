@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
     <title>Резюме</title>
 </head>
 <body>
-    <div>
+    <button id="theme-toggle" class="theme-btn"></button>
+
+    <div class="resume-container">
         <aside>
             <header>
                 <h1>Олег <br> Рубай</h1>
@@ -15,6 +18,14 @@
             <section>
                 <h2>Про себе</h2>
                 <p>Студент, який цікавиться розробкою програмного забезпечення та кібербезпекою. Пройшов курс по Python. Люблю розбиратися в тому, як працює код, і швидко вчуся новому.</p>
+            </section>
+
+            <!-- Прибрали звідси storage-info -->
+
+            <section>
+                <h2>Освіта</h2>
+                <p><strong>Національний університет "Львівська політехніка"</strong><br>
+                Студент 3-го курсу, спеціальність "Кібербезпека", 2023 — дотепер</p>
             </section>
 
             <section>
@@ -41,12 +52,6 @@
             </section>
 
             <section>
-                <h2>Освіта</h2>
-                <p><strong>Національний університет "Львівська політехніка"</strong><br>
-                Студент 3-го курсу, спеціальність "Кібербезпека", 2023 — дотепер</p>
-            </section>
-
-            <section>
                 <h2>Hard Skills</h2>
                 <ul>
                     <li>Python (основна мова)</li>
@@ -66,7 +71,14 @@
                     <li>Величезне бажання розвиватися в IT</li>
                 </ul>
             </section>
+
+            <section id="comments-container"></section>
+
         </main>
     </div>
+
+    <section id="storage-info" class="system-footer"></section>
+    <div id="feedback-modal" class="modal hidden">...</div>
+    <script src="script.js"></script>
 </body>
 </html>

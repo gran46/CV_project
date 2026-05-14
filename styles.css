@@ -1,0 +1,213 @@
+:root {
+    --bg-color: #ffffff;
+    --sidebar-bg: #f4f7f6;
+    --text-main: #2c3e50;
+    --text-secondary: #546e7a;
+    --accent-color: #2e7d32;
+    --line-color: #e0e0e0;
+    --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body.dark-theme {
+    --bg-color: #2d2d2d;
+    --sidebar-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-secondary: #b0bec5;
+    --line-color: #444;
+}
+
+body {
+    background-color: var(--sidebar-bg);
+    font-family: var(--font-family);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.resume-container {
+    background-color: var(--bg-color);
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    min-height: 250mm;
+}
+
+aside {
+    width: 35%;
+    background-color: var(--sidebar-bg);
+    padding: 40px 30px;
+    border-right: 1px solid var(--line-color);
+}
+
+main {
+    width: 65%;
+    padding: 40px 40px;
+}
+
+h1 {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-top: 30px;
+}
+
+h2::after {
+    content: "";
+    flex: 1;
+    margin-left: 15px;
+    height: 1px;
+    background-color: var(--accent-color);
+    opacity: 0.6;
+}
+
+#storage-info, #comments-container {
+    word-break: break-all;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+#feedback-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#feedback-form label {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+#feedback-form input, #feedback-form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--line-color);
+    border-radius: 6px;
+    background: var(--sidebar-bg);
+    color: var(--text-main);
+}
+
+#feedback-form button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .resume-container { flex-direction: column; }
+    aside, main { width: 100%; }
+}
+
+/* Максимально простий і тонкий футер */
+#storage-info {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto; /* Відступ від резюме */
+    padding: 10px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 10px; /* Дуже дрібний шрифт */
+    color: var(--text-secondary);
+    opacity: 0.4; /* Напівпрозорий, щоб не відволікав */
+    line-height: 1.8;
+}
+
+/* Прибираємо заголовок, який генерує JS */
+#storage-info h2 {
+    display: none;
+}
+
+/* Вишиковуємо всі параграфи в один рядок через крапку */
+#storage-info p {
+    display: inline;
+    margin: 0;
+}
+
+#storage-info p::after {
+    content: " • "; /* Розділювач між даними */
+    margin: 0 5px;
+}
+
+#storage-info p:last-child::after {
+    content: ""; /* Прибираємо крапку після останнього елемента */
+}
+
+/* Робимо назви параметрів не такими яскравими */
+#storage-info strong {
+    font-weight: normal;
+    text-transform: lowercase;
+    color: var(--text-main);
+}
